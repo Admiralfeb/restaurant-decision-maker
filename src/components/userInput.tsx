@@ -16,14 +16,16 @@ interface UserInputProps {
 }
 
 /** Used for the User Input for the application */
-export function UserInput(props: UserInputProps) {
+export class UserInput extends React.Component<UserInputProps> {
   /**
    * Checks whether a value is a zipcode.
    */
-  const isZipCode = (value: string): boolean => {
+  isZipCode(value: string): boolean {
     const zipRegex = /^[0-9]{5}$/;
     return zipRegex.test(value);
-  };
+  }
 
-  return <div>UserInput Component</div>;
+  render() {
+    return <div>UserInput Component</div>;
+  }
 }
